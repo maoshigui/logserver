@@ -1,0 +1,22 @@
+{{template "header"}}
+    	<title>所有日志</title>
+		<script src="/static/js/jquery-1.10.1.min.js"></script>
+		<script src="/static/js/allwebsocket.js"></script>
+  	</head>
+	
+	<body>
+		<div class="navbar navbar-default navbar-static-top">
+			<div class="container">
+				{{template "navbar" .}}
+			</div>	
+		</div>
+		
+		<span type="hidden" id="logtype" value={{.LogType}}></span>
+		
+		<span>GoCT日志</span>
+		<div id="log" style="height:400px; overflow-y:scroll; border:1px solid #CCC;"></div>
+		
+		<span>微服务日志</span>
+		<div id="logMs" style="height:400px; overflow-y:scroll; border:1px solid #CCC;"></div>
+	</body>
+</html>

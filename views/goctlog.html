@@ -1,0 +1,17 @@
+{{template "header"}}
+    	<title>GoCT 日志</title>
+		<script src="/static/js/jquery-1.10.1.min.js"></script>
+		<script src="/static/js/websocket.js"></script>
+  	</head>
+	
+	<body>
+		<div class="navbar navbar-default navbar-static-top">
+			<div class="container">
+				{{template "navbar" .}}
+			</div>	
+		</div>
+		
+		<span type="hidden" id="logtype" value={{.LogType}}></span>
+		<div id="log" style="height:600px; overflow-y:scroll; border:1px solid #CCC;"></div>
+	</body>
+</html>
