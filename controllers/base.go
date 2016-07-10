@@ -20,7 +20,8 @@ func (this *baseController) setupWsForLog(logtype string, logchan chan []byte) {
 		return
 	}
 
-	go outLog(ws, logchan, logtype)
+	filterChan := make(chan string)
+	go outLog(ws, logchan, logtype, filterChan)
 
 	defer func() {
 		ws.Close()
@@ -33,6 +34,6 @@ func (this *baseController) setupWsForLog(logtype string, logchan chan []byte) {
 		if err != nil {
 			return
 		}
-		beego.Trace(string(p))
+		filterChan <- string(p)
 	}
 }

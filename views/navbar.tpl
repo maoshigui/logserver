@@ -10,9 +10,9 @@
 
 <form class="navbar-form navbar-right" role="search">
   <div class="form-group">
-    <input type="text" class="form-control" placeholder="过滤">
+    <input id="sendbox" type="text" class="form-control" placeholder="过滤">
   </div>
-  <button type="submit" class="btn btn-default">过滤</button>
+  <button id="sendbtn" type="button" class="btn btn-default">过滤</button>
 </form>
 
 {{end}}

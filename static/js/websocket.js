@@ -19,4 +19,15 @@ $(document).ready(function () {
         $('#log').append('<p>' + event.data + '<p>');
         $('#log').get(0).scrollTop=$('#log').get(0).scrollHeight;
     };
+	
+	// Send messages.
+    var postConecnt = function () {
+        var content = $('#sendbox').val();
+        socket.send(content);
+        $('#sendbox').val("");
+    }
+
+    $('#sendbtn').click(function () {
+        postConecnt();
+    });
 });
